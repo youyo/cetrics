@@ -35,9 +35,9 @@ var containerListCmd = &cobra.Command{
 		case "zabbix-discovery":
 			for _, container := range containers {
 				discoveryData = append(discoveryData, zabbixDiscoveryItem{
-					"#CONTAINER_NAME":  container.Spec.Aliases[0],
-					"#CONTAINER_ID":    container.Spec.Aliases[1],
-					"#CONTAINER_IMAGE": container.Spec.Image,
+					"{#CONTAINER_NAME}":  container.Spec.Aliases[0],
+					"{#CONTAINER_ID}":    container.Spec.Aliases[1],
+					"{#CONTAINER_IMAGE}": container.Spec.Image,
 				})
 			}
 			fmt.Println(discoveryData.Json())
