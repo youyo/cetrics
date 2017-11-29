@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: /go/src/github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}
+    working_directory: /go/src/github.com/youyo/cetrics
     docker:
       - image: golang:1.9
     steps:
@@ -10,7 +10,6 @@ jobs:
           name: Dependency
           command: |
             go get -u -v github.com/golang/dep/cmd/dep
-            cd /go/src/github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}
             dep ensure -v
       - run:
           name: Test
@@ -23,7 +22,7 @@ jobs:
               go get -u -v github.com/tcnksm/ghr
               go build -x
               VERSION=`git describe --tags --abbrev=0`
-              ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} --replace ${VERSION} ${CIRCLE_PROJECT_REPONAME}
+              ghr -t ${GITHUB_TOKEN} -u youyo -r cetrics --replace ${VERSION} cetrics
             else
               echo "Not master branch."
             fi
