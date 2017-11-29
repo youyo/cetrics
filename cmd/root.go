@@ -5,7 +5,6 @@ import (
 	"os"
 
 	"github.com/spf13/cobra"
-	"github.com/spf13/viper"
 )
 
 var (
@@ -17,8 +16,8 @@ var (
 )
 
 var RootCmd = &cobra.Command{
-	Use: "cetrics",
-	//Short: "A brief description of your application",
+	Use:   "cetrics",
+	Short: "cAdvisor metrics fetcher",
 	//Long:  `A brief description of your application`,
 	//Run: func(cmd *cobra.Command, args []string) {},
 }
@@ -36,6 +35,6 @@ func init() {
 }
 
 func initConfig() {
-	viper.SetEnvPrefix("cetrics")
-	viper.AutomaticEnv()
+	//viper.SetEnvPrefix("cetrics")
+	//viper.AutomaticEnv()
 }

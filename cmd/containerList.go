@@ -11,8 +11,8 @@ import (
 
 var containerListCmd = &cobra.Command{
 	Use:   "container-list",
-	Short: "A brief description of your command",
-	Long:  `A brief description of your command`,
+	Short: "List containers",
+	//Long:  ``,
 	Run: func(cmd *cobra.Command, args []string) {
 		client, err := cAdvisor.NewClient(cAdvisorUrl)
 		if err != nil {

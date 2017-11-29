@@ -5,8 +5,8 @@ import (
 )
 
 var resourceCmd = &cobra.Command{
-	Use: "resource",
-	//Short: "",
+	Use:   "resource",
+	Short: "Container resources",
 	//Long: ``,
 	//Run: func(cmd *cobra.Command, args []string) {},
 }
